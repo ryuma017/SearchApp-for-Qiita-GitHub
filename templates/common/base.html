@@ -1,0 +1,34 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap.css読み込み -->
+  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+  <!-- --------------------- -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <title>StockR</title>
+</head>
+
+<body style="padding-top:4.5rem;">
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main>
+    <div class="container my-5 mx-auto">
+      {% block content %}
+      {% endblock%}
+    </div>
+  </main>
+  <!-- ========== END MAIN CONTENT ========== -->
+
+  <!-- jQuery読み込み -->
+  <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+  <!-- Bootstrapのjs読み込み -->
+  <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+</body>
+
+</html>

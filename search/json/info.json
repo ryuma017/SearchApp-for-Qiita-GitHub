@@ -1,0 +1,9 @@
+{
+    "Qiita": {
+        "url": "https://qiita.com/api/v2/items"
+    },
+
+    "GitHub": {
+        "url": "https://api.github.com/search/repositories"
+    }
+}

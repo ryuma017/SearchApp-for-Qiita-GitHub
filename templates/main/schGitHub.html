@@ -1,0 +1,46 @@
+{% extends 'common/base.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+
+{% include 'common/searchForm.html' %}
+
+<div class="list">
+  {% for datum in data %}
+  <div class="list-item p-3 m-3 bg-white rounded shadow">
+    <div> <!-- name -->
+      <a class="text-decoration-none fs-5" href="{{ datum.html_url }}">{{ datum.full_name }}</a>
+    </div>
+    <div> <!-- topics -->
+    {% for topic in datum.topics %}
+      <a class="text-decoration-none small text-dark me-2 px-1 py-1 rounded-pill" href="#" style="background-color: #dfdfdf;">{{ topic }}</a>
+    {% endfor %}
+    </div>
+    <div class="pt-2"> <!-- description -->
+      <p class="my-1 mb-0 text-secondary text-small">{{ datum.description|truncatechars:100 }}</p>
+    </div>
+    <div class="text-muted d-flex flex-wrap small pt-2">
+      <div class="fw-bold me-3"> <!-- stargazers -->
+        ☆ {{ datum.stargazers_count }}
+      </div>
+      <div class="me-3"> <!-- lang -->
+        lang: {{ datum.language }}
+      </div>
+      <div class="me-3"> <!-- created time -->
+        投稿日:{{ datum.created_at }}                             <!-- なんでフォーマットできんのじゃー -->
+      </div>                                                    <!-- template filter のdateが使えない -->
+      <div class="me-3"> <!-- updated time -->                  <!-- 指定するとなぜか空文字になっちゃう -->
+        更新日:{{ datum.updated_at }}                             <!-- わからなすぎるから後回しで。さよならエレジー -->
+      </div>
+    </div>
+  </div>
+  {% empty %}
+  <div>
+    <p>「{{ keyword }}」に一致する投稿は見つかりませんでした。</p>
+  </div>
+  {% endfor %}
+</div>
+
+{% include 'common/pagenateUI.html' %}
+
+{% endblock %}

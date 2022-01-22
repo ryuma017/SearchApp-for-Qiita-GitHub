@@ -1,0 +1,19 @@
+{% extends 'common/base.html' %}
+
+
+{% block content %}
+
+{% include 'common/searchForm.html' %}
+
+<div class="text-center">
+  <div class="pb-5">
+    <b>キーワードを入力し、検索対象とするサービス名を一つ選択してください。<br>検索には各種サービスの検索オプションも使用可能です。</b>
+  </div>
+  <div>
+    <p>検索オプションを確認する</p>
+    <a href="https://help.qiita.com/ja/articles/qiita-search-options">Qiita</a><br>
+    <a href="https://docs.github.com/ja/search-github/searching-on-github/searching-for-repositories">GitHub:repo</a>
+  </div>
+</div>
+
+{% endblock %}

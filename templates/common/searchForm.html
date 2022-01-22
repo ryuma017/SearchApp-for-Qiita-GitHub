@@ -1,0 +1,16 @@
+{% load widget_tweaks %}
+
+<div class="text-center mb-5 mx-md-auto col-md-8">
+  <form method="get" action="{% url 'main:search' %}">
+    <div>
+      {% render_field form.q type='search' class='form-control rounded-pill mb-3 py-2' autocomplete='off' placeholder='キーワード または オプション を入力' %}
+      {% for radio in form.name %}
+      {{ radio.tag }}
+      <label for="{{ radio.id_for_label }}" class="btn btn-outline-secondary rounded-pill btn-sm mx-3">
+        {{radio.choice_label }}
+      </label>
+      {% endfor %}
+    </div>
+    <button type="submit" style="display: none;"></button><!-- 非表示 -->
+  </form>
+</div>
