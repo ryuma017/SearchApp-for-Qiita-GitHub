@@ -1,1 +1,2 @@
-# An app to search Qiita articles and GitHub repo for Techson
+# An app to search Qiita articles and GitHub repos
+### for Techson
